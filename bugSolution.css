@@ -1,0 +1,15 @@
+/* Original buggy CSS */
+.element {
+  width: calc(50% - 10vw);
+}
+
+/* Solution: Avoid mixing percentages and viewport units in calc() */
+.element {
+  width: 50%;
+  margin-left: 10vw;
+}
+/* or, if the width is to be reduced by 10vw, use different approach  */
+.element {
+  width: calc(50% - 100px);
+  /* calculate the pixel value of 10vw and use it.  10vw can be dynamically calculated with js for better adaptability */
+}
